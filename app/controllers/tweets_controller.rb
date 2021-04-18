@@ -25,9 +25,6 @@ class TweetsController < ApplicationController
   def edit
   end
 
-end
-
-
   private
 
   def tweet_params
