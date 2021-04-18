@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit]
+  before_action :set_tweet, only: [:show, :edit]
 
   def index
     @tweets = Tweet.order('created_at DESC')
@@ -19,15 +20,22 @@ class TweetsController < ApplicationController
   end
 
   def show
-    @tweet = Tweet.find(params[:id])
+  end
+
+  def edit
   end
 
 end
 
 
-private
+  private
 
-def tweet_params
+  def tweet_params
   params.require(:tweet).permit(:image, :text, :pet_type_id, :gender_id, :age_id).merge(user_id: current_user.id)
-end
+  end
 
+  def set_tweet
+  @tweet = Tweet.find(params[:id])
+  end
+
+end
