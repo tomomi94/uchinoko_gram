@@ -1,4 +1,4 @@
-class PetType < ActiveHash::Base
+class Age < ActiveHash::Base
   self.data = [
     { id: 1, name: '--' }, { id: 2, name: '0歳' }, { id: 3, name: '1歳' },
     { id: 4, name: '2歳' }, { id: 5, name: '3歳' }, { id: 6, name: '4歳' },
@@ -15,9 +15,9 @@ class PetType < ActiveHash::Base
     { id: 37, name: '35歳' }, { id: 38, name: '36歳' }, { id: 39, name: '37歳' },
     { id: 40, name: '38歳' }, { id: 41, name: '39歳' }, { id: 42, name: '40歳' },
     { id: 43, name: '41歳' }, { id: 44, name: '42歳' }, { id: 45, name: '43歳' },
-    { id: 44, name: '44歳' }, { id: 45, name: '45歳' }, { id: 45, name: '46歳' },
-    { id: 47, name: '47歳' }, { id: 48, name: '48歳' }, { id: 49, name: '49歳' },
-    { id: 50, name: '50歳以上' },{ id: 51, name: '不明' }
+    { id: 46, name: '44歳' }, { id: 47, name: '45歳' }, { id: 48, name: '46歳' },
+    { id: 49, name: '47歳' }, { id: 50, name: '48歳' }, { id: 51, name: '49歳' },
+    { id: 52, name: '50歳以上' },{ id: 53, name: '不明' }
   ]
 
     include ActiveHash::Associations
