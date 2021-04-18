@@ -13,7 +13,7 @@ class PetType < ActiveHash::Base
     { id: 31, name: '昆虫' }, { id: 32, name: '金魚' }, { id: 33, name: 'コイ' },
     { id: 34, name: '熱帯魚' }, { id: 35, name: 'イモリ' }, { id: 36, name: 'サンショウウオ' },
     { id: 37, name: 'ウーパールーパー' }, { id: 38, name: 'ブタ' }, { id: 39, name: 'カワウソ' },
-    { id: 40, name: 'その他の鳥' }, { id: 41, name: 'その他の小動物' }, { id: 41, name: 'その他' }
+    { id: 40, name: 'その他の鳥' }, { id: 41, name: 'その他の小動物' }, { id: 42, name: 'その他' }
   ]
 
   include ActiveHash::Associations
