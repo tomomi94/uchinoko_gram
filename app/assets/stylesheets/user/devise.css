@@ -1,0 +1,53 @@
+.contents.row {
+  margin: 50px 250px;
+}
+
+.container {
+  margin: 20px 0;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+  background-color: #fdf5e6;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 0 20px;
+  text-align: center;
+  font-weight: normal;
+  font-size: 14px;
+  color: #808080;
+}
+
+h2 {
+  color: #808080;
+  font-size: 25px;
+}
+
+.field {
+  font-weight: bold;
+}
+
+form input {
+  width: 45%;
+  margin: 5px 0 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  border-bottom: 2px solid  #9c6952;
+  border-radius: 5px;
+  font-family: "游ゴシック", "YuGothic";
+}
+
+form input[type="submit"] {
+  background-color: #9c6952;
+  border-radius: 5px;
+  color: #fff;
+  border: 0;
+  font-size: 15px;
+  width: 20%;
+  font-weight: bold;
+}
+
+form input[type="submit"]:hover {
+  background-color: #9c6a5296;
+}
