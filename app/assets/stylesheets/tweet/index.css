@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+.main {
+  font-family: "游ゴシック", "YuGothic";
+}
+
+/* 画面上部の帯部分 */
+.top-image {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
