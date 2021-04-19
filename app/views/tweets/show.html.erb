@@ -13,6 +13,28 @@
       <div class="tweet-time">
         <%= l @tweet.created_at %>
       </div>
+      <div class="comment-area">
+        <div class="comments">
+          <h4>＜コメント一覧＞</h4>
+          <div class="comment-list">
+            <% @comments.each do |comment| %>
+              <p>
+                <strong><%= link_to comment.user.accountname, "/users/#{comment.user_id}" %>：</strong>
+                <%= comment.text %>
+                <%= comment.created_at %>
+              </p>
+            <% end %>
+          </div>
+        </div>
+        <% if user_signed_in? %>
+          <%= form_with(model: [@tweet, @comment], local: true) do |form| %>
+            <%= form.text_area :text, class:"comment-text", placeholder: "コメントする", rows: "2" %>
+            <%= form.submit "投稿", class:"post-btn" %>
+          <% end %>
+        <% else %>
+          <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+        <% end %>
+      </div>
     </div>
   </div>
 
@@ -46,7 +68,7 @@
     <% end %>
   <% end %>
   </div>
-  <%=link_to '>>TOPページ', root_path, class:"back-btn" %>
+  <%=link_to 'TOPに戻る', root_path, class:"back-btn" %>
   </div>
 
 </div>
