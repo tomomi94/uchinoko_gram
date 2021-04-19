@@ -17,9 +17,9 @@ class Age < ActiveHash::Base
     { id: 43, name: '41歳' }, { id: 44, name: '42歳' }, { id: 45, name: '43歳' },
     { id: 46, name: '44歳' }, { id: 47, name: '45歳' }, { id: 48, name: '46歳' },
     { id: 49, name: '47歳' }, { id: 50, name: '48歳' }, { id: 51, name: '49歳' },
-    { id: 52, name: '50歳以上' },{ id: 53, name: '不明' }
+    { id: 52, name: '50歳以上' }, { id: 53, name: '不明' }
   ]
 
-    include ActiveHash::Associations
-    has_many :tweets
+  include ActiveHash::Associations
+  has_many :tweets
 end

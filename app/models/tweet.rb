@@ -14,7 +14,7 @@ class Tweet < ApplicationRecord
     validates :pet_type_id, numericality: { other_than: 1 }
   end
   with_options numericality: { other_than: 1 } do
-      validates :gender_id
-      validates :age_id
+    validates :gender_id
+    validates :age_id
   end
 end
