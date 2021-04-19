@@ -43,7 +43,8 @@ a:hover{
 
 /* 画像横のテキスト */
 .tweet-text {
-  padding: 30px 0;
+  width: 80%;
+  padding-top: 30px;
   overflow-wrap: break-word;
 }
 
