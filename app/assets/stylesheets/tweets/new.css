@@ -24,19 +24,8 @@ a:hover{
   width: 55vw;
   min-width: 450px;
   margin: 30px 0;
-  padding: 10vh 5vw 5vh;
+  padding: 5vh 5vw 5vh;
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
-}
-
-.tweets-sell-title {
-  font-size: 20px;
-  margin-bottom: 60px;
-  text-align: center;
-  color: #808080;
-  padding: 0.5em 0;
-  border-top: solid 3px #9c6952;
-  border-bottom: solid 3px #9c6952;
-  font-weight: bold;
 }
 
 /*共通*/
@@ -92,23 +81,33 @@ a:hover{
 /*投稿ボタン*/
 .sell-btn-contents {
   width: 100%;
-  margin-top: 30px;
+  margin-top: 50px;
   display: inline-flex;
   justify-content: space-around;
-  align-items: center;
 }
 
 .sell-btn {
-  background: #9c6952;
-  border: 1px solid #9c6952;
-  font-weight: bold;
   flex-basis: 60%;
 }
 
+/* topボタン */
 .back-btn {
-  color: #808080;
-  flex-basis: 20%;
+  max-width: 65px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 50%;
+  line-height: 50px;
   font-size: 10px;
+  bottom: 32px;
+  right: 32px;
+  padding: 5px;
+  position: fixed;
+  border: none;
+  background: #9c6952;
+  color: white;
 }
 
-
+.back-btn:hover {
+  background:#9c6a5296;
+  color: white;
+}

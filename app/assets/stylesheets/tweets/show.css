@@ -5,6 +5,7 @@
 
 a {
   text-decoration: none;
+  color: #696969;
 }
 
 a:hover{
@@ -20,45 +21,81 @@ a:hover{
 }
 
 /* 画像、テキスト */
-.tweet-explain-box1 {
-  width: 25vw;
-  margin:2em 0;
-  position: relative;
-}
-
 .tweet-box {
   display: flex;
-  justify-content: center;
   font-size: 15px;
+  padding: 0 30px;
+}
+
+.tweet-explain-box1 {
+  width: 50%;
+  margin-left: 20px;
+  position: relative;
+  box-sizing: border-box;
 }
 
 /* 画像 */
-img {
+.tweet-box-img {
   width: 50%;
-  height: auto;
+  height: 450px;
   object-fit: contain;
 }
 
 /* 画像横のテキスト */
 .tweet-text {
-  padding: 30px 20px;
+  width: 80%;
+  padding-top: 30px;
+  overflow-wrap: break-word;
 }
 
 .tweet-time {
-  padding: 10px;
+  padding: 10px 0 10px 0;
   font-size: 10px;
+}
+
+/* コメント */
+.comment-area {
+  box-sizing: border-box;
+}
+
+h4 {
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+.comment-list {
+  border-top: 2px dotted #9c6a5296;
+  border-bottom: 2px dotted #9c6a5296;
+  width: 80%;
+  height: 150px;
+  overflow: scroll;
+}
+
+.comment-text {
+  margin-top: 10px;
+  padding: 1vw;
+  width: 60%;
+  height: 5vh;
+  border: none;
+  background-color: #f5f5f5;
+}
+
+.post-btn {
+  display: block;
 }
 
 /* 投稿詳細のテーブル */
 .tweet-explain-box2 {
-  width: 80%;
-  padding: 20px;
-  font-size: 10px;
-  align: left;
-  margin-left: 10%;
+  width: 100%;
+  padding-top: 20px;
+  align: center;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+}
+
+.detail-table {
+  margin-left: 40px;
 }
 
 table{
@@ -100,22 +137,4 @@ table th,table td{
   transform: translateY(2px);
 }
 
-/* topボタン */
-.back-btn {
-  display: inline-block;
-  max-width: 180px;
-  text-align: left;
-  border: 2px solid #9c6a5296;
-  color: #9c6a5296;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px 16px;
-  border-radius: 4px;
-  transition: .4s;
-}
-
-.back-btn:hover {
-  background-color: #9c6a5296;
-  border-color: #9c6a5296;
-  color: #FFF;
-}
+/* topボタンはtweet/showと同じ */

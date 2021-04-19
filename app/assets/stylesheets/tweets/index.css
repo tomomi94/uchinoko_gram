@@ -36,6 +36,7 @@
 .tweet-img {
   width: 33vh;
   height: 33vh;
+  object-fit: cover;
 }
 
 /*投稿ボタン*/
@@ -49,6 +50,7 @@
   position: fixed;
   padding: 10px;
 }
+
 .tweet-btn-text {
   color: #fff;
   display: block;
