@@ -39,7 +39,6 @@ a:hover{
 .select-box-pet, .select-box-gender, .tweets-text, .select-box-age {
   border: none;
   border-bottom: 2px solid  #9c6952;
-  border-radius: 5px;
 }
 
 .select-box-pet, .select-box-gender, .select-box-age {
@@ -84,6 +83,7 @@ a:hover{
   margin-top: 50px;
   display: inline-flex;
   justify-content: space-around;
+
 }
 
 .sell-btn {

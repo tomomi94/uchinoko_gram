@@ -1,0 +1,20 @@
+<%# ヘッダー %>
+<%= render 'shared/header' %>
+
+<div class='tweet-contents'>
+  <h2 class='title'>検索結果</h2>
+  <ul class='tweet-lists'>
+</div>
+
+<div class='tweet-lists'>
+  <% @tweets.each do |tweet| %>
+    <%= link_to tweet_path(tweet.id) do %>
+      <div class='tweet-img-content'>
+        <%= image_tag tweet.image, class: 'tweet-img' %>
+        <% end %>
+      </div>
+  <% end %>
+</div>
+
+<%# フッター %>
+<%= render 'shared/footer' %>
