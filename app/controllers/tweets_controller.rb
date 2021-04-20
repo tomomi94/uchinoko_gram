@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -25,6 +25,10 @@ class TweetsController < ApplicationController
   end
 
   def edit
+  end
+
+  def search
+    @tweets = Tweet.search(params[:keyword])
   end
 
   def update

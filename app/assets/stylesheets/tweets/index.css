@@ -29,7 +29,6 @@
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
   list-style: none;
 }
 
@@ -37,6 +36,7 @@
   width: 33vh;
   height: 33vh;
   object-fit: cover;
+  margin: 5px;
 }
 
 /*投稿ボタン*/
