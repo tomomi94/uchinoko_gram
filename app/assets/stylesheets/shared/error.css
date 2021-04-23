@@ -1,8 +1,9 @@
-.field_with_errors {
+.field_with_errors, .login-flash-message {
   display: contents;
+  white-space: nowrap
 }
 
-.error-message {
+.error-message, .login-flash-message {
   max-width: 80%;
   text-align:left;
   color:#ff6347;
