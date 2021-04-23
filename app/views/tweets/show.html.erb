@@ -3,71 +3,75 @@
 
 <%# 詳細 %>
 <div class="tweet-show">
-  <div class="tweet-box">
-    <%= image_tag @tweet.image, class:"tweet-box-img" %>
+  <div class="tweet-left-box">
+    <div class="tweet-box">
+      <%= image_tag @tweet.image, class:"tweet-box-img" %>
+    </div>
+    <div class="tweet-table">
+      <table class="detail-table">
+        <tbody>
+          <tr>
+            <th class="detail-tweet">投稿者</th>
+            <td class="detail-value"><%= link_to @tweet.user.accountname, user_path(@tweet.user) %></td>
+          </tr>
+            <tr>
+            <th class="detail-tweet">ペットの種類</th>
+            <td class="detail-value"><%= @tweet.pet_type.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-tweet">性別</th>
+            <td class="detail-value"><%= @tweet.gender.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-tweet">年齢</th>
+            <td class="detail-value"><%= @tweet.age.name %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-    <div class="tweet-explain-box1">
-      <div class="tweet-text">
-        <%= @tweet.text %>
+  <div class="tweet-right-box">
+    <div class="tweet-text">
+      <%= @tweet.text %>
+    </div>
+    <div class="tweet-time">
+      <%= l @tweet.created_at %>
+    </div>
+    <div class="comment-area">
+      <h4>＜コメント一覧＞</h4>
+      <div class="comment-list">
+        <% @comments.each do |comment| %>
+          <p>
+            <strong><%= link_to comment.user.accountname, user_path(@tweet.user) %>：</strong>
+            <%= comment.text %>
+            <%= l comment.created_at %>
+          </p>
+        <% end %>
       </div>
-      <div class="tweet-time">
-        <%= l @tweet.created_at %>
-      </div>
-      <div class="comment-area">
-        <div class="comments">
-          <h4>＜コメント一覧＞</h4>
-          <div class="comment-list">
-            <% @comments.each do |comment| %>
-              <p>
-                <strong><%= link_to comment.user.accountname, user_path(@tweet.user) %>：</strong>
-                <%= comment.text %>
-                <%= l comment.created_at %>
-              </p>
-            <% end %>
-          </div>
-        </div>
+      <div class="post-comment">
         <% if user_signed_in? %>
           <%= form_with(model: [@tweet, @comment], local: true) do |form| %>
             <%= form.text_area :text, class:"comment-text", placeholder: "コメントする", rows: "2" %>
-            <%= form.submit "投稿", class:"post-btn" %>
+            <%= form.submit "投稿", class:"comment-post-btn" %>
           <% end %>
         <% else %>
           <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
         <% end %>
       </div>
     </div>
+
+      <div class="under-btn">
+      <% if user_signed_in? %>
+        <% if current_user.id == @tweet.user_id %>
+          <%= link_to "削除", tweet_path(@tweet.id), method: :delete, class:"tweet-destroy" %>
+          <%= link_to "編集", edit_tweet_path(@tweet.id), method: :get, class:"tweet-edit" %>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
   </div>
 
-  <div class="tweet-explain-box2">
-    <table class="detail-table">
-      <tbody>
-        <tr>
-          <th class="detail-tweet">投稿者</th>
-          <td class="detail-value"><%= link_to @tweet.user.accountname, user_path(@tweet.user) %></td>
-        </tr>
-          <tr>
-          <th class="detail-tweet">ペットの種類</th>
-          <td class="detail-value"><%= @tweet.pet_type.name %></td>
-        </tr>
-        <tr>
-          <th class="detail-tweet">性別</th>
-          <td class="detail-value"><%= @tweet.gender.name %></td>
-        </tr>
-        <tr>
-          <th class="detail-tweet">年齢</th>
-          <td class="detail-value"><%= @tweet.age.name %></td>
-        </tr>
-      </tbody>
-    </table>
-
-  <div class="tweet-explain-box3">
-  <% if user_signed_in? %>
-    <% if current_user.id == @tweet.user_id %>
-      <%= link_to "削除", tweet_path(@tweet.id), method: :delete, class:"tweet-destroy" %>
-      <%= link_to "編集", edit_tweet_path(@tweet.id), method: :get, class:"tweet-edit" %>
-    <% end %>
-  <% end %>
-  </div>
   <%=link_to 'TOPに戻る', root_path, class:"back-btn" %>
   </div>
 
