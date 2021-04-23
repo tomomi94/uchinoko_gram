@@ -1,6 +1,5 @@
 .field_with_errors, .login-flash-message {
   display: contents;
-  white-space: nowrap
 }
 
 .error-message, .login-flash-message {
