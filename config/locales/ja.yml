@@ -2,3 +2,19 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M"
+
+ja:
+  activerecord:
+    attributes:
+      user:
+        accountname: アカウント名
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: 確認用パスワード
+      tweet:
+        text: テキスト
+        image: 画像
+        gender_id: 性別
+        pet_type_id: ペットの種類
+        age_id: 年齢
+

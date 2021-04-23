@@ -7,6 +7,7 @@
     <%= form_with(model: @tweet, local: true) do |f| %>
 
     <%# 共通エラー文設定する %>
+    <%= render 'shared/error_messages', model: f.object %>
 
     <%# 投稿画像 %>
     <div class="img-upload">

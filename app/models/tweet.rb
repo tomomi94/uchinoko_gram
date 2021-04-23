@@ -17,12 +17,9 @@ class Tweet < ApplicationRecord
   belongs_to :age
 
   with_options presence: true do
-    validates :text
     validates :image
-    validates :pet_type_id, numericality: { other_than: 1 }
+    validates :text
+    validates :pet_type_id, numericality: { other_than: 1 , message: 'を選択してください' }
   end
-  with_options numericality: { other_than: 1 } do
-    validates :gender_id
-    validates :age_id
-  end
+
 end
