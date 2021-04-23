@@ -81,14 +81,9 @@ a:hover{
 .sell-btn-contents {
   width: 100%;
   margin-top: 50px;
-  display: inline-flex;
-  justify-content: space-around;
-
+  
 }
 
-.sell-btn {
-  flex-basis: 60%;
-}
 
 /* topボタン */
 .back-btn {
