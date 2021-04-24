@@ -41,24 +41,28 @@
 
 /*投稿ボタン*/
 .tweet-btn {
-  width: 120px;
+  width: 100px;
   background: #9c6952;
   text-align: center;
-  border-radius: 4%;
-  bottom: 32px;
-  right: 32px;
+  border-radius: 50%;
+  bottom: 30px;
+  right: 30px;
   position: fixed;
-  padding: 10px;
+  padding: 11px;
 }
 
 .tweet-btn-text {
   color: #fff;
   display: block;
   text-decoration: none;
-  margin-bottom: 3px;
-  font-size: 16px;
+  font-size: 10px;
+  font-weight: bold;
 }
 
 .tweet-btn-icon {
-  width: 50%;
+  width: 42%;
+}
+
+.tweet-btn:hover {
+  background:#9c6a5296;
 }
