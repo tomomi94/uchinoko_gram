@@ -5,10 +5,10 @@ ja:
     failure:
       already_authenticated: すでにログインしています。
       inactive: アカウントが有効化されていません。メールに記載された手順にしたがって、アカウントを有効化してください。
-      invalid: "%{authentication_keys}またはパスワードが違います"
+      invalid: "・%{authentication_keys}またはパスワードが違います"
       last_attempt: もう一回誤るとアカウントがロックされます。
       locked: アカウントは凍結されています。
-      not_found_in_database: "%{authentication_keys}またはパスワードが違います"
+      not_found_in_database: "・%{authentication_keys}またはパスワードが違います"
       timeout: セッションがタイムアウトしました。もう一度ログインしてください。
       unauthenticated: アカウント登録もしくはログインしてください。
       unconfirmed: メールアドレスの本人確認が必要です。
@@ -60,7 +60,7 @@ ja:
       new:
         sign_in: ログイン
       signed_in: ログインしました。
-      signed_out: ログアウトしました。
+      signed_out: ログアウトしました
     unlocks:
       new:
         resend_unlock_instructions: アカウントの凍結解除方法を再送する

@@ -77,17 +77,24 @@ a:hover{
   display: block;
 }
 
-/*投稿ボタン*/
-.sell-btn-contents {
-  width: 100%;
-  margin-top: 50px;
-  display: inline-flex;
-  justify-content: space-around;
-
+/* 投稿ボタン */
+.post-btn {
+  width: 50%;
+  margin: 5vh auto 0;
 }
 
-.sell-btn {
-  flex-basis: 60%;
+.post-brown-btn {
+  width: 100%;
+  background: #9c6952;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  line-height: 40px;
+  cursor: pointer;
+}
+
+.post-brown-btn:hover {
+  background-color: #9c6a5296;
 }
 
 /* topボタン */

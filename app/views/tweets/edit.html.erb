@@ -48,9 +48,9 @@ app/assets/stylesheets/tweets/new.css %>
     </div>
     <%# /投稿内容の詳細 %>
 
-    <%# ボタン %>
-    <div class="sell-btn-contents">
-      <%= f.submit "保存" ,class:"sell-btn" %>
+    <%# topボタン %>
+    <div class="post-btn">
+      <%= f.submit "保存" ,class:"post-brown-btn" %>
       <%=link_to '>>TOPページ', root_path, class:"back-btn" %>
     </div>
     <%# /ボタン %>
@@ -58,6 +58,5 @@ app/assets/stylesheets/tweets/new.css %>
   <% end %>
 </div>
 
-
 <%# フッター %>
-<%# <%= render "shared/footer" %> %>
+<%= render "shared/footer" %>

@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search]
+  before_action :ensure_user, only: [:edit, :update, :destroy]
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -53,4 +54,11 @@ class TweetsController < ApplicationController
   def set_tweet
     @tweet = Tweet.find(params[:id])
   end
+
+  def ensure_user
+    @tweets = current_user.tweets
+    @tweet = @tweets.find_by(id: params[:id])
+    redirect_to root_path unless @tweet
+  end
+
 end

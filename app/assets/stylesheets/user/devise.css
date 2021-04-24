@@ -4,7 +4,7 @@
 
 .container {
   margin: 20px 0;
-  padding: 5vh 5vw 10vh;
+  padding: 5vh 5vw 5vh;
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
   background-color: #fdf5e6;
   box-sizing: border-box;
@@ -36,19 +36,21 @@ form input {
   font-family: "游ゴシック", "YuGothic";
 }
 
-form input[type="submit"] {
-  padding: 5px 10px;
-  background-color: #9c6952;
-  color: #fff;
-  border: 0;
-  font-size: 15px;
-  font-weight: bold;
-  margin: 30px auto;
-  position: absolute;
-  transform : translate(-50%,-50%);
-  width: 100px;
+.login-btn {
+  width: 50%;
+  margin: 0 auto;
 }
 
-form input[type="submit"]:hover {
+.login-brown-btn {
+  width: 100%;
+  background: #9c6952;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  line-height: 40px;
+  cursor: pointer;
+}
+
+.login-brown-btn:hover {
   background-color: #9c6a5296;
 }
