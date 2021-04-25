@@ -11,4 +11,7 @@ class User < ApplicationRecord
 
   validates :accountname, presence: true, length: { maximum: 6 }
   
+  def already_liked?(tweet)
+    self.likes.exists?(tweet_id: tweet_id)
+  end
 end
