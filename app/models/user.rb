@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
 
   validates :accountname, presence: true, length: { maximum: 6 }
+  
 end
