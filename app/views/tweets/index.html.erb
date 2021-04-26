@@ -16,9 +16,11 @@
         <%= link_to tweet_path(tweet.id) do %>
         <div class='tweet-img-content'>
           <%= image_tag tweet.image, class: "tweet-img" %>
+          <% end %>
         </div>
-        <% end %>
-      </li>
+
+      <%= render partial: 'shared/like',  locals: { tweet: tweet} %>
+
       <% end %>
     </ul>
   </div>

@@ -4,6 +4,7 @@
 
 .main {
   font-family: "游ゴシック", "YuGothic";
+  color: #808080;
 }
 
 /* 画面上部の帯部分 */
@@ -19,16 +20,41 @@
   margin: 20px;
 }
 
+h2 {
+  position: relative;
+  display: inline-block;
+  padding: 0 60px;
+}
+
+h2:before, h2:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 45px;
+  height: 2px;
+  border-top: solid 2px #9c6952;
+  border-bottom: solid 2px #9c6952;
+}
+
+h2:before {
+  left:0;
+}
+
+h2:after {
+  right: 0;
+}
+
 .title {
-  margin-left: 10px;
+  margin-left: 5%;
   font-weight: bold;
 }
 
 .tweet-lists {
-  width: 100vw;
-  margin-top: 20px;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
   list-style: none;
 }
 
@@ -36,7 +62,16 @@
   width: 33vh;
   height: 33vh;
   object-fit: cover;
-  margin: 5px;
+  margin-right: 5%;
+}
+
+.tweet-img:nth-child(3n) {
+  margin-right: 0;
+}
+
+/* いいねボタン */
+.color {
+  color: red;
 }
 
 /*投稿ボタン*/
