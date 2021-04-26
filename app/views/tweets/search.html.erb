@@ -4,16 +4,19 @@
 <div class='tweet-contents'>
   <h2 class='title'>検索結果</h2>
   <ul class='tweet-lists'>
-</div>
+    <% @tweets.each do |tweet| %>
+      <li class='list'>
+        <%= link_to tweet_path(tweet.id) do %>
+        <div class='tweet-img-content'>
+          <%= image_tag tweet.image, class: 'tweet-img' %>
+          <% end %>
+        </div>
 
-<div class='tweet-lists'>
-  <% @tweets.each do |tweet| %>
-    <%= link_to tweet_path(tweet.id) do %>
-      <div class='tweet-img-content'>
-        <%= image_tag tweet.image, class: 'tweet-img' %>
-        <% end %>
-      </div>
-  <% end %>
+      <%# いいね %>
+      <%= render partial: 'shared/like',  locals: { tweet: tweet} %>
+
+    <% end %>
+  </ul>
 </div>
 
 <%# フッター %>

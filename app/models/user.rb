@@ -3,10 +3,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  validates :accountname, presence: true, length: { maximum: 6 }
 
   has_many :tweets
-  has_many :likes
   has_many :comments
+  has_many :likes
 
-  validates :accountname, presence: true, length: { maximum: 6 }
+  def liked_by?(tweet_id)
+    likes.where(tweet_id: tweet_id).exists?
+  end
+  
 end

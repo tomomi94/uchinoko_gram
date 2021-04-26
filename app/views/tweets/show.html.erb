@@ -38,6 +38,24 @@
     <div class="tweet-time">
       <%= l @tweet.created_at %>
     </div>
+
+    <%# いいね %>
+    <% if user_signed_in? %>
+      <% if current_user.liked_by?(@tweet.id) %>
+        <%= link_to destroy_like_path(@tweet), method: :DELETE, class: 'like-btn' do %>
+          <i class="fas fa-heart color"></i>
+        <% end %>
+      <% else %>
+        <%= link_to create_like_path(@tweet), method: :POST, class: 'like-btn' do %>
+          <i class="far fa-heart color"></i>
+        <% end %>
+      <% end %>
+      <%= @tweet.likes.count %>
+    <% else %>
+      <i class="fas fa-heart color"></i>
+      <%= @tweet.likes.count %>
+    <% end %>
+
     <div class="comment-area">
       <h4>＜コメント一覧＞</h4>
       <div class="comment-list">
