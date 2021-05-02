@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_25_070622) do
+ActiveRecord::Schema.define(version: 2021_05_02_050111) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -41,11 +41,26 @@ ActiveRecord::Schema.define(version: 2021_04_25_070622) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "hashtags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "hashname", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "tweet_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tweet_hashtags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "tweet_id"
+    t.bigint "hashtag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["hashtag_id"], name: "index_tweet_hashtags_on_hashtag_id"
+    t.index ["tweet_id"], name: "index_tweet_hashtags_on_tweet_id"
   end
 
   create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -73,5 +88,7 @@ ActiveRecord::Schema.define(version: 2021_04_25_070622) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "tweet_hashtags", "hashtags"
+  add_foreign_key "tweet_hashtags", "tweets"
   add_foreign_key "tweets", "users"
 end
