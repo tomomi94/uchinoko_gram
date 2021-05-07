@@ -12,5 +12,4 @@ class User < ApplicationRecord
   def liked_by?(tweet_id)
     likes.where(tweet_id: tweet_id).exists?
   end
-  
 end
