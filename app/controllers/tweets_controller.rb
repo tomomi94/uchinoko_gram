@@ -13,6 +13,8 @@ class TweetsController < ApplicationController
 
   def create
     @tweet = Tweet.new(tweet_params)
+    tag_list = params[:tweet][:hashname].split(",")
+    @tweet.tags_save(tag_list)
     if @tweet.save
       redirect_to root_path
     else
@@ -34,7 +36,10 @@ class TweetsController < ApplicationController
   end
 
   def update
-    if @tweet.update(tweet_params)
+    @tweet.update(tweet_params)
+    tag_list = params[:tweet][:hashname].split(",")
+    @tweet.tags_save(tag_list)
+    if @tweet.save
       redirect_to root_path
     else
       render :edit
