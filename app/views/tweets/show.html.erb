@@ -35,6 +35,9 @@
     <div class="tweet-text">
       <%= @tweet.text %>
     </div>
+    <% @tweet.hashtag.each do |tag| %>
+      #<%= tag.hashname %>
+    <% end %>
     <div class="tweet-time">
       <%= l @tweet.created_at %>
     </div>
