@@ -25,4 +25,16 @@ class Tweet < ApplicationRecord
     validates :pet_type_id, numericality: { other_than: 1 , message: 'を選択してください' }
   end
 
+  def tags_save(tag_list)
+    if self.hashtag != nil
+      tweet_tags_records = TweetHashtag.where(tweet_id: self.id)
+      tweet_tags_records.destroy_all
+    end
+
+    tag_list.each do |tag|
+      inspected_tag = Hashtag.where(hashname: tag).first_or_create
+      self.hashtag << inspected_tag
+    end
+  end
+
 end
