@@ -13,8 +13,8 @@
     <div class="text">
       <span class="indispensable">＊詳細</span>
         <%= f.text_area :text, class:"tweets-text", id:"tweetname", maxlength:"500" %>
-      <span class="indispensable">＊タグ</span>
-        <%= f.text_area :hashname, class:"input-tag", maxlength:"100" %>
+      <span class="indispensable">＊タグ（任意）</span>
+        <%= f.text_area :hashname, class:"input-tag", maxlength:"100",placeholder: ',で区切ってください' %>
   </div>
   <%# /投稿内容の詳細 %>
   <div class="tweet-detail">
