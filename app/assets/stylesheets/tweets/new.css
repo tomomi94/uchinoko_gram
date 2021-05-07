@@ -36,7 +36,7 @@ a:hover{
   justify-content: space-between;
 }
 
-.select-box-pet, .select-box-gender, .tweets-text, .select-box-age {
+.select-box-pet, .select-box-gender, .tweets-text, .select-box-age, .input-tag {
   border: none;
   border-bottom: 2px solid  #9c6952;
 }
@@ -73,7 +73,16 @@ a:hover{
   width: 100%;
   height: 200px;
   padding: 5px;
-  margin-top: 15px;
+  margin: 5px 0 20px 0;
+  display: block;
+}
+
+/*タグ*/
+.input-tag {
+  width: 100%;
+  height: 80px;
+  padding: 5px;
+  margin-top: 5px;
   display: block;
 }
 
@@ -99,15 +108,15 @@ a:hover{
 
 /* topボタン */
 .back-btn {
-  max-width: 65px;
-  text-align: center;
-  font-weight: bold;
+  max-width: 45%;
   border-radius: 50%;
   line-height: 50px;
   font-size: 10px;
   bottom: 32px;
   right: 32px;
   padding: 5px;
+  text-align: center;
+  font-weight: bold;
   position: fixed;
   border: none;
   background: #9c6952;

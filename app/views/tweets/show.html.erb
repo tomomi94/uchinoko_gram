@@ -31,11 +31,14 @@
     </div>
   </div>
 
-  <div class="tweet-right-box">
-    <div class="tweet-text">
+  <div class= "tweet-right-box">
+    <div class= "tweet-text">
       <%= @tweet.text %>
     </div>
-    <div class="tweet-time">
+    <% @tweet.hashtag.each do |tag| %>
+        #<%= tag.hashname %>
+    <% end %>
+    <div class= "tweet-time">
       <%= l @tweet.created_at %>
     </div>
 
@@ -43,22 +46,22 @@
     <% if user_signed_in? %>
       <% if current_user.liked_by?(@tweet.id) %>
         <%= link_to destroy_like_path(@tweet), method: :DELETE, class: 'like-btn' do %>
-          <i class="fas fa-heart color"></i>
+          <i class= 'fas fa-heart color'></i>
         <% end %>
       <% else %>
         <%= link_to create_like_path(@tweet), method: :POST, class: 'like-btn' do %>
-          <i class="far fa-heart color"></i>
+          <i class= 'far fa-heart color' ></i>
         <% end %>
       <% end %>
       <%= @tweet.likes.count %>
     <% else %>
-      <i class="fas fa-heart color"></i>
+      <i class= 'fas fa-heart color' ></i>
       <%= @tweet.likes.count %>
     <% end %>
 
-    <div class="comment-area">
+    <div class= 'comment-area' >
       <h4>＜コメント一覧＞</h4>
-      <div class="comment-list">
+      <div class= 'comment-list' >
         <% @comments.each do |comment| %>
           <p>
             <strong><%= link_to comment.user.accountname, user_path(@tweet.user) %>：</strong>
@@ -67,11 +70,11 @@
           </p>
         <% end %>
       </div>
-      <div class="post-comment">
+      <div class= 'post-comment' >
         <% if user_signed_in? %>
           <%= form_with(model: [@tweet, @comment], local: true) do |form| %>
-            <%= form.text_area :text, class:"comment-text", placeholder: "コメントする", rows: "2" %>
-            <%= form.submit "投稿", class:"comment-post-btn" %>
+            <%= form.text_area :text, class:'comment-text', placeholder: 'コメントする', rows: '2' %>
+            <%= form.submit '投稿', class:'comment-post-btn' %>
           <% end %>
         <% else %>
           <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
@@ -79,21 +82,21 @@
       </div>
     </div>
 
-      <div class="under-btn">
+      <div class= 'under-btn'>
       <% if user_signed_in? %>
         <% if current_user.id == @tweet.user_id %>
-          <%= link_to "削除", tweet_path(@tweet.id), method: :delete, class:"tweet-destroy" %>
-          <%= link_to "編集", edit_tweet_path(@tweet.id), method: :get, class:"tweet-edit" %>
+          <%= link_to '削除', tweet_path(@tweet.id), method: :delete, class:'tweet-destroy' %>
+          <%= link_to '編集', edit_tweet_path(@tweet.id), method: :get, class:'tweet-edit' %>
         <% end %>
       <% end %>
       </div>
     </div>
   </div>
 
-  <%=link_to 'TOPに戻る', root_path, class:"back-btn" %>
+  <%=link_to 'TOPに戻る', root_path, class:'back-btn' %>
   </div>
 
 </div>
 
 <%# フッター %>
-<%= render "shared/footer" %>
+<%= render 'shared/footer' %>

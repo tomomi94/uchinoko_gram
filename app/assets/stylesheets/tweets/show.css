@@ -94,6 +94,14 @@ table td{
   overflow-wrap: break-word;
 }
 
+.tweet-time{
+  margin: 6px 0;
+}
+
+.like-btn {
+  font-size: 15px;
+}
+
 /* コメント */
 h4 {
   font-size: 15px;
