@@ -9,27 +9,27 @@ uchinoko_gram(ウチノコグラム)
 - いいね機能
 - 新規登録/ログイン
 
-## AppURL（※実装後記述）
-
+## AppURL
+https://uchinokogram.herokuapp.com/
 
 ## Production
 自分のペットのかわいい・おもしろい画像を投稿できるアプリケーション。
 SNSにはさまざまな画像が投稿されているため、ペットの画像だけを投稿できるアプリケーションを制作。また投稿だけではなく飼い主同士が交流できるようにいいねやコメントができる機能を実装。
 
 ## 実装予定の内容
-- いいね機能
-
-## DEMO（※実装後記述）
-
+- SNSアカウントでログイン
+- 複数枚画像投稿
+- 動画投稿
+- カテゴリ検索機能
 
 ## Account（※実装後記述）
 ### Basic
-id:
-pass:
+id:admin
+pass:2222
 
 ### LoginPass
-mail:
-pass:
+mail:abc@email.com
+pass:abc123
 
 ## テーブル設計
 
