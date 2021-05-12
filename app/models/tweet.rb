@@ -3,7 +3,7 @@ class Tweet < ApplicationRecord
   has_one_attached :image
   has_many :comments
   has_many :likes
-  has_many :tweet_hashtags
+  has_many :tweet_hashtags, dependent: :destroy
   has_many :hashtag, through: :tweet_hashtags
 
   def self.search(search)
